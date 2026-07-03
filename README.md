@@ -3,11 +3,11 @@ A responsive, single-page global social networking website homepage interface bu
 
 ## Live Demo
 
-[View the Live Website](https://YOUR_USERNAME.github.io/facebook-clone/) 
+[View the Live Website](https://index.html/) 
 
 ## Visual Preview
 <!-- TIP: Drag and drop a screenshot or a short screen recording video/GIF right here in this GitHub editor! -->
-![Bondfire Desktop View](path-to-your-screenshot.png)
+![Bondfire Desktop View](src="imgs/Bondf")
 
 ##  Core Features
 *   *Dynamic Navigation Bar:* Fully structured top nav including search spacing, profile layouts, and navigation tabs.
