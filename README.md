@@ -3,7 +3,7 @@ A responsive, single-page global social networking website homepage interface bu
 
 ## Live Demo
 
-[View the Live Website]() 
+[View the Live Website]("https://bennymusonda.github.io/Facechat/") 
 
 ## Visual Preview
 
