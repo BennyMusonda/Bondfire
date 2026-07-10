@@ -1,9 +1,9 @@
-# Facechat
+# OpenFeed
 A responsive, single-page global social networking website homepage interface built for educational purposes. This project focuses on replicating a complex, modern web layout with clean structural elements.
 
 ## Live Demo
 
-[View the Live Website]("https://bennymusonda.github.io/Facechat/") 
+[View the Live Website]("https://bennymusonda.github.io/OpenFeed/") 
 
 ## Visual Preview
 
@@ -11,7 +11,7 @@ A responsive, single-page global social networking website homepage interface bu
 https://github.com/user-attachments/assets/4045fa4e-91ac-4e8c-b147-f4e1143695fc
 
 
-## Facechat Desktop View
+## OpenFeed Desktop View
 
 <img width="1914" height="1037" alt="FacechatCapture" src="https://github.com/user-attachments/assets/1c64813f-39f5-4a08-b894-9a3f088fbd20" />
 
