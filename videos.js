@@ -1,4 +1,10 @@
 
+const observer = new Intersectionobserver((entries)) => {
+    entries.forEach(entry => {
+        const video = entry.target;
+        if (entry,isIntersecting && entry.intersectionRatio >= 0.8) {
+            video.play().catch(err => console.og("autoplay blocked,err)))
+
 
 function togglePlay(button) {
     const reel = button.closest('.reel');
