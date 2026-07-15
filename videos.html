@@ -1,135 +1,117 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videos</title>
-    <link rel="stylesheet" href="./videos.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videos Feed</title>
+  <link rel="stylesheet" href="./videos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
+
+  <nav class="navbar">
+    <div class="nav-left">
+      <h1>OpenFeed</h1>
+      <input class="searchBar" type="text" placeholder="Search...">
+    </div>
+    <ul class="nav-links">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link active">
+          <span class="material-icons">home</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./market.html" class="nav-link">
+          <span class="material-icons">shopping_cart</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <span class="material-icons">message</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <span class="material-icons">notifications</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <span class="material-icons">person</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="video-feed-container">
     
-    <!-- NAVIGATION BAR -->
-    <nav class="navbar">
+    <div class="reel">
+      <video class="reel-video" src="./vids/reel2.mp4" loop playsinline muted></video>
+      
+      <button class="play-pause-btn" onclick="togglePlay(this)">
+        <span class="material-symbols-outlined">play_arrow</span>
+      </button>
 
-        <div class="nav-left">
-            <h1>OpenFeed</h1>
-            <input class="searchBar" type="text" placeholder="Search...">
-        </div>
-
-        <ul class="nav-links">
-            <li class="nav-item">
-                <a href="index.html" class="nav-link active">
-                    <span class="material-icons">home</span>
-                </a>
-            </li>   
-
-            <li class="nav-item">
-                <a href="./market.html" class="nav-link">
-                    <span class="material-icons">shopping_cart</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <span class="material-icons">message</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <span class="material-icons">notifications</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <span class="material-icons">person</span>
-                </a>
-            </li>
-        </ul>
-     </nav>
-
-     <!-- MAIN CONTENT AREA -->
-    <div class="video-feed">
-       
-        <div class="reel">
-            <video id="reelVideo1" src="./vids/reel2.mp4" loop playsinline></video>
-            
-            <button class="play-pause-btn" onclick="togglePlay(this)">
-                <span class="material-symbols-outlined">play_arrow</span>
-            </button>
-
-            <div class="reel-actions">
-                <button class="action-btn">
-                    <span class="material-symbols-outlined">favorite</span>
-                    <text>1.2K</text> 
-                </button>
-                <button class="action-btn">
-                    <span class="material-symbols-outlined">visibility</span>
-                    <text>5.4K</text>
-                </button>
-                <button class="action-btn">
-                    <span class="material-symbols-outlined">chat_bubble</span>
-                    <text>230</text> 
-                </button>
-                <button class="action-btn">
-                    <span class="material-symbols-outlined">bar_chart</span>
-                    <text>45</text> 
-                </button>
-                <button class="action-btn">
-                    <span class="material-symbols-outlined">share</span>
-                    <text>3.1K</text>
-                </button>
-            </div>
-        </div>
+      <div class="reel-actions">
+        <button class="action-btn" onclick="handleLike(this)">
+          <span class="material-symbols-outlined">favorite</span>
+          <span class="action-text">1.2K</span>
+        </button>
+        <button class="action-btn">
+          <span class="material-symbols-outlined">visibility</span>
+          <span class="action-text">5.4K</span>
+        </button>
+        <button class="action-btn">
+          <span class="material-symbols-outlined">chat_bubble</span>
+          <span class="action-text">230</span>
+        </button>
+        <button class="action-btn">
+          <span class="material-symbols-outlined">bar_chart</span>
+          <span class="action-text">45</span>
+        </button>
+        <button class="action-btn" onclick="handleShare()">
+          <span class="material-symbols-outlined">share</span>
+          <span class="action-text">3.1K</span>
+        </button>
+      </div>
     </div>
 
+    <div class="reel">
+      <video class="reel-video" src="./vids/reel2.mp4" loop playsinline muted></video>
+      
+      <button class="play-pause-btn" onclick="togglePlay(this)">
+        <span class="material-symbols-outlined">play_arrow</span>
+      </button>
 
-    <div class="video-feed">
-       
-        <div class="reel">
-            <video id="reelVideo1" src="./vids/reel2.mp4"  loop playsinline></video>
-            
-            <button class="play-pause-btn" onclick="togglePlay(this)">
-                <span class="material-symbols-outlined">play_arrow</span>
-            </button>
-
-            <div class="reel-actions">
-                <button class="action-btn">
-                    <span class="material-symbols-outlined">favorite</span>
-                    <text>1.2K</text> 
-                </button>
-                <button class="action-btn">
-                    <span class="material-symbols-outlined">visibility</span>
-                    <text>5.4K</text>
-                </button>
-                <button class="action-btn">
-                    <span class="material-symbols-outlined">chat_bubble</span>
-                    <text>230</text> 
-                </button>
-                <button class="action-btn">
-                    <span class="material-symbols-outlined">bar_chart</span>
-                    <text>45</text> 
-                </button>
-                <button class="action-btn">
-                    <span class="material-symbols-outlined">share</span>
-                    <text>3.1K</text>
-                </button>
-            </div>
-        </div>
+      <div class="reel-actions">
+        <button class="action-btn" onclick="handleLike(this)">
+          <span class="material-symbols-outlined">favorite</span>
+          <span class="action-text">945</span>
+        </button>
+        <button class="action-btn">
+          <span class="material-symbols-outlined">visibility</span>
+          <span class="action-text">2.1K</span>
+        </button>
+        <button class="action-btn">
+          <span class="material-symbols-outlined">chat_bubble</span>
+          <span class="action-text">89</span>
+        </button>
+        <button class="action-btn">
+          <span class="material-symbols-outlined">bar_chart</span>
+          <span class="action-text">12</span>
+        </button>
+        <button class="action-btn" onclick="handleShare()">
+          <span class="material-symbols-outlined">share</span>
+          <span class="action-text">512</span>
+        </button>
+      </div>
     </div>
 
+  </main>
 
-     
-
-
-    <script src="./videos.js" defer></script>
+  <script src="./videos.js" defer></script>
 </body>
 </html>
