@@ -1,117 +1,228 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Videos Feed</title>
-  <link rel="stylesheet" href="./videos.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-</head>
-<body>
+* {
+  box-sizing: border-box;
+}
 
-  <nav class="navbar">
-    <div class="nav-left">
-      <h1>OpenFeed</h1>
-      <input class="searchBar" type="text" placeholder="Search...">
-    </div>
-    <ul class="nav-links">
-      <li class="nav-item">
-        <a href="index.html" class="nav-link active">
-          <span class="material-icons">home</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="./market.html" class="nav-link">
-          <span class="material-icons">shopping_cart</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">
-          <span class="material-icons">message</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">
-          <span class="material-icons">notifications</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">
-          <span class="material-icons">person</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #121212;
+  overflow: hidden; /* Prevents double scrollbars on the window */
+}
 
-  <main class="video-feed-container">
-    
-    <div class="reel">
-      <video class="reel-video" src="./vids/reel2.mp4" loop playsinline muted></video>
-      
-      <button class="play-pause-btn" onclick="togglePlay(this)">
-        <span class="material-symbols-outlined">play_arrow</span>
-      </button>
+/* --- NAVIGATION BAR --- */
+.navbar {
+  align-items: center;
+  background: #02a172;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  position: fixed; /* Fixed so feed can scroll under it seamlessly */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 8px 16px;
+  height: 60px;
+}
 
-      <div class="reel-actions">
-        <button class="action-btn" onclick="handleLike(this)">
-          <span class="material-symbols-outlined">favorite</span>
-          <span class="action-text">1.2K</span>
-        </button>
-        <button class="action-btn">
-          <span class="material-symbols-outlined">visibility</span>
-          <span class="action-text">5.4K</span>
-        </button>
-        <button class="action-btn">
-          <span class="material-symbols-outlined">chat_bubble</span>
-          <span class="action-text">230</span>
-        </button>
-        <button class="action-btn">
-          <span class="material-symbols-outlined">bar_chart</span>
-          <span class="action-text">45</span>
-        </button>
-        <button class="action-btn" onclick="handleShare()">
-          <span class="material-symbols-outlined">share</span>
-          <span class="action-text">3.1K</span>
-        </button>
-      </div>
-    </div>
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-    <div class="reel">
-      <video class="reel-video" src="./vids/reel2.mp4" loop playsinline muted></video>
-      
-      <button class="play-pause-btn" onclick="togglePlay(this)">
-        <span class="material-symbols-outlined">play_arrow</span>
-      </button>
+.navbar h1 {
+  font-size: 24px;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
 
-      <div class="reel-actions">
-        <button class="action-btn" onclick="handleLike(this)">
-          <span class="material-symbols-outlined">favorite</span>
-          <span class="action-text">945</span>
-        </button>
-        <button class="action-btn">
-          <span class="material-symbols-outlined">visibility</span>
-          <span class="action-text">2.1K</span>
-        </button>
-        <button class="action-btn">
-          <span class="material-symbols-outlined">chat_bubble</span>
-          <span class="action-text">89</span>
-        </button>
-        <button class="action-btn">
-          <span class="material-symbols-outlined">bar_chart</span>
-          <span class="action-text">12</span>
-        </button>
-        <button class="action-btn" onclick="handleShare()">
-          <span class="material-symbols-outlined">share</span>
-          <span class="action-text">512</span>
-        </button>
-      </div>
-    </div>
+.searchBar {
+  border: none;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  width: 180px;
+  color: white;
+  outline: none;
+  transition: background-color 0.2s;
+}
 
-  </main>
+.searchBar::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
 
-  <script src="./videos.js" defer></script>
-</body>
-</html>
+.searchBar:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 8px;
+}
+
+.nav-item {
+  width: 50px;
+  height: 45px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.nav-link.active .material-icons {
+  color: #ffffff;
+}
+
+.nav-link .material-icons {
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.2s ease;
+}
+
+/* --- VIDEO FEED CONTAINER (Scroll Snapping) --- */
+.video-feed-container {
+  margin-top: 60px; /* Leave space for fixed navbar */
+  height: calc(100vh - 60px);
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory; /* Smooth snap transition */
+  scroll-behavior: smooth;
+}
+
+/* Hide default scrollbars for pure aesthetic look */
+.video-feed-container::-webkit-scrollbar {
+  display: none;
+}
+
+.reel {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: calc(100vh - 80px); /* Adjust spacing from the screen edges */
+  margin: 10px auto;
+  aspect-ratio: 9 / 16;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  scroll-snap-align: center; /* Reels snap perfectly to center */
+}
+
+.reel video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CENTER PLAY/PAUSE BUTTON OVERLAY */
+.play-pause-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #02a172;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  z-index: 5;
+}
+
+.play-pause-btn:active {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.reel:hover .play-pause-btn {
+  opacity: 1;
+}
+
+.play-pause-btn .material-symbols-outlined {
+  font-size: 40px;
+}
+
+/* SIDEBAR CONTAINER */
+.reel-actions {
+  position: absolute;
+  bottom: 20px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #fff;
+  z-index: 10;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.action-btn:active {
+  transform: scale(0.9);
+}
+
+.action-btn span {
+  font-size: 30px;
+  text-shadow: 0px 2px 4px rgba(0,0,0,0.8);
+}
+
+.action-text {
+  font-size: 12px;
+  margin-top: 4px;
+  text-shadow: 0px 2px 4px rgba(0,0,0,0.8);
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    height: auto;
+  }
+
+  .video-feed-container {
+    margin-top: 110px; /* Adjusted offset for mobile nav stacking */
+    height: calc(100vh - 110px);
+  }
+
+  .nav-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .searchBar {
+    width: 60%;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
