@@ -5,7 +5,6 @@ body {
     margin: 0;
     color: #1c1e21;
 }
-/*--MARKET SECTION--*/
 
 .main-container {
     max-width: 600px;
@@ -94,13 +93,6 @@ body {
     color: rgba(255, 255, 255, 0.75);
     transition: color 0.2s ease;
 }
-
-.market-container[
-    display: flx;
-}
-.market-title h1{
-    color: #02a172;
-
 
 /* --- MEDIA QUERIES --- */
 @media (max-width: 768px) {
