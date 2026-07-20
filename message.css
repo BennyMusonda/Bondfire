@@ -94,7 +94,6 @@ body {
     transition: color 0.2s ease;
 }
 
-
 /* --- MEDIA QUERIES --- */
 @media (max-width: 768px) {
     .navbar {
@@ -115,18 +114,5 @@ body {
     .nav-links {
         width: 100%;
         justify-content: space-around;
-    }
-}
-
-@media (max-width: 480px) {
-    .action-btn span {
-        display: none; 
-    }
-    .action-btn {
-        padding: 12px;
-    }
-    .Stories li.story-card {
-        height: 150px;
-        width: 90px;
     }
 }
