@@ -52,11 +52,80 @@
         </ul>
     </nav>
 
-  <main class="main-container">
-    <div class="main-title">
-      Notification center coming soon
-    </div>
-  </main>
+  <div class="notification-container">
+  <!-- Header -->
+  <div class="notification-header">
+    <h2>Notifications</h2>
+    <button class="mark-all-btn" id="markAllRead">Mark all as read</button>
+  </div>
+
+  <!-- Filter Tabs -->
+  <div class="notification-tabs">
+    <button class="tab-btn active" data-filter="all">All</button>
+    <button class="tab-btn" data-filter="unread">Unread</button>
+  </div>
+
+  <!-- Notification List -->
+  <ul class="notification-list" id="notificationList">
+    <!-- Unread Notification Item -->
+    <li class="notification-item unread" data-id="1">
+      <div class="avatar-container">
+        <img src="https://picsum.photos" alt="User avatar" class="user-avatar">
+        <div class="badge-icon comment-badge">💬</div>
+      </div>
+      <div class="notification-content">
+        <p class="notification-text"><strong>Sarah Jenkins</strong> commented on your post: "This looks amazing!"</p>
+        <span class="notification-time">2 mins ago</span>
+      </div>
+      <div class="notification-actions">
+        <button class="menu-trigger">•••</button>
+        <div class="action-dropdown hidden">
+          <button class="toggle-read-btn">Mark as read</button>
+          <button class="delete-btn">Remove notification</button>
+        </div>
+      </div>
+      <div class="unread-dot"></div>
+    </li>
+
+    <!-- Read Notification Item -->
+    <li class="notification-item" data-id="2">
+      <div class="avatar-container">
+        <img src="https://picsum.photos" alt="User avatar" class="user-avatar">
+        <div class="badge-icon like-badge">👍</div>
+      </div>
+      <div class="notification-content">
+        <p class="notification-text"><strong>Alex Rivera</strong> and 5 others liked your photo.</p>
+        <span class="notification-time">2 hours ago</span>
+      </div>
+      <div class="notification-actions">
+        <button class="menu-trigger">•••</button>
+        <div class="action-dropdown hidden">
+          <button class="toggle-read-btn">Mark as unread</button>
+          <button class="delete-btn">Remove notification</button>
+        </div>
+      </div>
+      <div class="unread-dot"></div>
+    </li>
+
+    <!-- Unread Friend Request Item -->
+    <li class="notification-item unread" data-id="3">
+      <div class="avatar-container">
+        <img src="https://picsum.photos" alt="User avatar" class="user-avatar">
+        <div class="badge-icon friend-badge">👤</div>
+      </div>
+      <div class="notification-content">
+        <p class="notification-text"><strong>David Kim</strong> sent you a friend request.</p>
+        <span class="notification-time">Yesterday</span>
+        <div class="inline-actions">
+          <button class="confirm-btn">Confirm</button>
+          <button class="delete-request-btn">Delete</button>
+        </div>
+      </div>
+      <div class="notification-actions">
+        <button class="menu-trigger">•••</button>
+        <div class="action-dropdown hidden">
+          <button class="toggle-read-btn">Mark as read</button>
+          <button class="delete-btn">Remove notification</button>
 
    <script src="notification.js" defer></script>
 </body>
