@@ -52,10 +52,70 @@
         </ul>
     </nav>
 
-  <main class="main-container">
-    <div class="main-title">
-      Profile center coming soon
+  <main>
+    <div class="profile-container">
+    <!-- Header Images -->
+    <div class="profile-header">
+        <div class="cover-photo">
+            <img src="https://picsum.photos" alt="Cover Photo">
+        </div>
+        <div class="avatar-container">
+            <img src="https://pravatar.cc" alt="User Avatar" id="avatar">
+        </div>
     </div>
+
+    <!-- User Information -->
+    <div class="profile-info">
+        <h1 class="user-name">Alex Morgan</h1>
+        <p class="user-handle">@alex_creative</p>
+        <p class="user-headline">UI/UX Designer & Frontend Enthusiast </p>
+        
+        <!-- Action Buttons -->
+        <div class="profile-actions">
+            <button class="btn btn-primary" id="followBtn">Follow</button>
+            <button class="btn btn-secondary" id="msgBtn">Message</button>
+        </div>
+    </div>
+
+    <!-- Social Metrics -->
+    <div class="profile-stats">
+        <div class="stat-item">
+            <span class="stat-value" id="followerCount">1,248</span>
+            <span class="stat-label">Followers</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value">612</span>
+            <span class="stat-label">Following</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value">42</span>
+            <span class="stat-label">Posts</span>
+        </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="profile-tabs">
+        <button class="tab-btn active" data-tab="posts">Posts</button>
+        <button class="tab-btn" data-tab="about">About</button>
+    </div>
+
+    <!-- Tab Content Dynamic Area -->
+    <div class="tab-content-wrapper">
+        <div class="tab-panel active" id="posts">
+            <div class="post-grid">
+                <div class="post-card">Just launched my new portfolio built from scratch!</div>
+                <div class="post-card"> Flexbox vs CSS Grid: Which one do you prefer for application dashboards?</div>
+                <div class="post-card"> Coding late into the night always hits different.</div>
+            </div>
+        </div>
+        <div class="tab-panel" id="about">
+            <div class="about-card">
+                <h3>Biography</h3>
+                <p>Building high-fidelity interfaces and clean user experiences. Based in San Francisco, CA. Let's connect!</p>
+            </div>
+        </div>
+    </div>
+</div>
   </main>
 
    <script src="person.js" defer></script>
